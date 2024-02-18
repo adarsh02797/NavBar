@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    background-image: url('christopher-gower-m_HRfLhgABo-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #fbfbfb;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    list-style: none;
+    width: 100vw;
+    transition: top 0.3s;
+}
+
+.navbar-header li {
+    display: flex;
+    height: 100%;
+    padding: 20px 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+}
+
+.navbar-header>li:nth-child(1){
+    margin-right: auto;
+    background-color: blue;
+}
+
+.navbar-header>li:hover{
+    background-color: grey;
+}
+
+.sidebar {
+    position: fixed;
+    top:0;
+    right:0;
+    width: 250px;
+    height: 100%;
+    z-index: 1000;
+    background-color: #fbfbfb34;
+    backdrop-filter: blur(10px) saturate(2);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.5);
+    list-style: none;
+    padding: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: 0.5s ease-in-out;
+}
+
+.sidebar>li:first-child{
+    font-size: 18px;
+    opacity: 0.5;
+    padding: 10px 20px 10px 10px;
+}
+
+.sidebar li {
+    /* margin: 10px 0; */
+    font-size: 18px;
+    width: 100%;
+    padding: 10px 20px 10px 10px;
+    display: flex;
+}
+
+.sidebar>li:hover{
+    background-color: grey;
+}
+.sidebar>li:first-child:hover{
+    opacity: 1;
+    background-color: #fbfbfb34;
+    backdrop-filter: blur(10px);
+    width:fit-content;
+}
+
+.sidebar.closed {
+    margin: 0 -300px;
+}
+
+.navbar-header>.hamburger {
+    display: none;
+}
+
+@media(min-width: 800px) {
+    .sidebar {
+        display: none;
+    }
+    .navbar-header>.hideOnMobile {
+        display: block;
+    }
+    .navbar-header>.hamburger {
+        display: none;
+    }
+}
+
+
+@media(max-width: 800px) {
+    .navbar-header>.hideOnMobile {
+        display: none;
+    }
+    .navbar-header>.hamburger {
+        display: block;
+    }
+}
+@media(max-width: 400px) {
+    .sidebar {
+        width: 95%;
+    }
+    .sidebar.closed{
+        width: 0%;
+    }
+}
